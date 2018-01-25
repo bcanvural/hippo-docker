@@ -1,0 +1,4 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippodocker/hst:workspace/hst:sitemenus:
+      jcr:primaryType: hst:sitemenus

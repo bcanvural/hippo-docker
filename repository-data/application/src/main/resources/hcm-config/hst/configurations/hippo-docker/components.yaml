@@ -1,0 +1,4 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippodocker/hst:components:
+      jcr:primaryType: hst:components

@@ -1,0 +1,7 @@
+group: 
+  name: hippo-docker
+  after: hippo-cms
+project: hippo-docker
+module: 
+  name: hippo-docker-repository-data-development
+  after: hippo-docker-repository-data-application

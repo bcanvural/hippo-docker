@@ -1,0 +1,5 @@
+group: 
+  name: hippo-docker
+  after: hippo-cms
+project: hippo-docker
+module: hippo-docker-repository-data-webfiles
