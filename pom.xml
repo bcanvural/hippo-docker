@@ -74,6 +74,8 @@
 
     <hippo.cms.locales>nl,de,fr,es,zh</hippo.cms.locales>
     <buildNumber>${maven.build.timestamp}</buildNumber>
+    <docker.image.prefix>bcanvural</docker.image.prefix>
+    <docker.image.tagname>latest</docker.image.tagname>
   </properties>
 
   <repositories>
@@ -415,14 +417,42 @@
             </executions>
             <configuration>
               <!-- Change repository name for your env. -->
-              <repository>cms/${project.artifactId}</repository>
-              <tag>${project.version}</tag>
+              <repository>${docker.image.prefix}/${project.artifactId}</repository>
+              <tag>${docker.image.tagname}</tag>
               <buildArgs>
                 <TAR_BALL>target/${project.artifactId}-${project.version}-distribution.tar.gz</TAR_BALL>
                 <REPOSITORY_XML>src/main/tomcat/conf/repository.xml</REPOSITORY_XML>
                 <SETENV_SH>src/main/tomcat/bin/setenv.sh</SETENV_SH>
                 <INDEX_INIT_SH>src/main/tomcat/bin/index-init.sh</INDEX_INIT_SH>
               </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>push</id>
+      <build>
+        <defaultGoal>validate</defaultGoal>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.6.0</version>
+            <executions>
+              <execution>
+                <phase>validate</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <executable>docker</executable>
+              <arguments>
+                <argument>push</argument>
+                <argument>${docker.image.prefix}/${project.artifactId}:${docker.image.tagname}</argument>
+              </arguments>
             </configuration>
           </plugin>
         </plugins>

@@ -11,8 +11,17 @@ Deploys hippo cms/site to a docker container
   $ mvn clean verify && mvn -P dist && mvn -P docker 
 ```
 
-* Run:
+## Push profile:
+Make sure you have public docker repo avaiable:
+https://cloud.docker.com/
+
+Relevant properties:
+```xml
+    <docker.image.prefix>bcanvural</docker.image.prefix>
+    <docker.image.tagname>latest</docker.image.tagname>
+```
+Activate profile:
 
 ```bash
-  $ docker run --name myhippo --rm -p 8080:8080 "cms/hippo-docker:0.1.0-SNAPSHOT"
+  $ mvn -P push
 ```

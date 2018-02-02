@@ -1,0 +1,32 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:translations/hippo:types/hippodocker:bannerdocument:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        hippodocker:content: Content
+        hippodocker:image: Image
+        hippodocker:link: Link
+        hippodocker:title: Title
+        jcr:name: Banner
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        hippodocker:content: Inhoud
+        hippodocker:image: Afbeelding
+        hippodocker:link: Link
+        hippodocker:title: Titel
+        jcr:name: Banner
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        hippodocker:content: Contenu
+        hippodocker:image: Image
+        hippodocker:link: Lien
+        hippodocker:title: Titre
+        jcr:name: Bannière
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        hippodocker:content: Inhalt
+        hippodocker:image: Abbildung
+        hippodocker:link: Link
+        hippodocker:title: Titel
+        jcr:name: Banner
