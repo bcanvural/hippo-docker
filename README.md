@@ -8,7 +8,7 @@ Deploys hippo cms/site to a docker container
 * Build:
 
 ```bash
-  $ mvn clean verify && mvn -P dist && mvn -P docker 
+  $ mvn clean verify && mvn -P dist && mvn -P docker.build 
 ```
 
 ## Push profile:
@@ -23,5 +23,5 @@ Relevant properties:
 Activate profile:
 
 ```bash
-  $ mvn -P push
+  $ mvn -P docker.push
 ```

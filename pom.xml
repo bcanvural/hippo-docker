@@ -396,7 +396,7 @@
       </build>
     </profile>
     <profile>
-      <id>docker</id>
+      <id>docker.build</id>
       <build>
         <plugins>
           <plugin>
@@ -431,7 +431,7 @@
       </build>
     </profile>
     <profile>
-      <id>push</id>
+      <id>docker.push</id>
       <build>
         <defaultGoal>validate</defaultGoal>
         <plugins>
