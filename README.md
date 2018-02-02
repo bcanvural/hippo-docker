@@ -1,5 +1,11 @@
 # Hippo CMS in a docker instance
 
+## Skip local build and run the hosted docker image
+
+```bash
+  $ docker run -p 8080:8080 bcanvural/hippo-docker:latest
+```
+
 ## Introduction
 Deploys hippo cms/site to a docker container
 
