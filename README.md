@@ -5,6 +5,10 @@
 ```bash
   $ docker run -p 8080:8080 bcanvural/hippo-docker:latest
 ```
+ With persistance:
+```bash
+  $ docker run -p 8080:8080 -v repo:/usr/local/tomcat/repository bcanvural/hippo-docker
+```
 
 ## Introduction
 Deploys hippo cms/site to a docker container
